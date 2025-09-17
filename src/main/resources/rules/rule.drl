@@ -1,0 +1,128 @@
+package com.rules
+
+import com.model.Condition
+import com.model.SqlQuery
+
+// Average Balance
+rule "Average Balance Greater Than"
+when
+    Condition( field == "Average Balance", operator == "Greater than", value : value )
+then
+    insertLogical( new SqlQuery("average_balance > " + value) );
+end
+
+rule "Average Balance Less Than"
+when
+    Condition( field == "Average Balance", operator == "Less than", value : value )
+then
+    insertLogical( new SqlQuery("average_balance < " + value) );
+end
+
+rule "Average Balance Equals"
+when
+    Condition( field == "Average Balance", operator == "Equals", value : value )
+then
+    insertLogical( new SqlQuery("average_balance = " + value) );
+end
+
+rule "Average Balance Between"
+when
+    Condition( field == "Average Balance", operator == "Between", value1 : value1, value2 : value2 )
+then
+    insertLogical( new SqlQuery("average_balance BETWEEN " + value1 + " AND " + value2) );
+end
+
+// Account Tenure
+rule "Account Tenure Greater Than"
+when
+    Condition( field == "Account Tenure", operator == "Greater than", value : value )
+then
+    insertLogical( new SqlQuery("account_tenure > " + value) );
+end
+
+rule "Account Tenure Less Than"
+when
+    Condition( field == "Account Tenure", operator == "Less than", value : value )
+then
+    insertLogical( new SqlQuery("account_tenure < " + value) );
+end
+
+rule "Account Tenure Equals"
+when
+    Condition( field == "Account Tenure", operator == "Equals", value : value )
+then
+    insertLogical( new SqlQuery("account_tenure = " + value) );
+end
+
+rule "Account Tenure Between"
+when
+    Condition( field == "Account Tenure", operator == "Between", value1 : value1, value2 : value2 )
+then
+    insertLogical( new SqlQuery("account_tenure BETWEEN " + value1 + " AND " + value2) );
+end
+
+// Customer Age
+rule "Customer Age Greater Than"
+when
+    Condition( field == "Customer Age", operator == "Greater than", value : value )
+then
+    insertLogical( new SqlQuery("customer_age > " + value) );
+end
+
+rule "Customer Age Less Than"
+when
+    Condition( field == "Customer Age", operator == "Less than", value : value )
+then
+    insertLogical( new SqlQuery("customer_age < " + value) );
+end
+
+rule "Customer Age Equals"
+when
+    Condition( field == "Customer Age", operator == "Equals", value : value )
+then
+    insertLogical( new SqlQuery("customer_age = " + value) );
+end
+
+rule "Customer Age Between"
+when
+    Condition( field == "Customer Age", operator == "Between", value1 : value1, value2 : value2 )
+then
+    insertLogical( new SqlQuery("customer_age BETWEEN " + value1 + " AND " + value2) );
+end
+
+// Branch Location (string based - only Equals makes sense)
+rule "Branch Location Equals"
+when
+    Condition( field == "Branch Location", operator == "Equals", value : value )
+then
+    insertLogical( new SqlQuery("branch_location = '" + value + "'") );
+end
+
+// Transaction Count
+rule "Transaction Count Greater Than"
+when
+    Condition( field == "Transaction Count", operator == "Greater than", value : value )
+then
+    insertLogical( new SqlQuery("transaction_count > " + value) );
+end
+
+rule "Transaction Count Less Than"
+when
+    Condition( field == "Transaction Count", operator == "Less than", value : value )
+then
+    insertLogical( new SqlQuery("transaction_count < " + value) );
+end
+
+rule "Transaction Count Equals"
+when
+    Condition( field == "Transaction Count", operator == "Equals", value : value )
+then
+    insertLogical( new SqlQuery("transaction_count = " + value) );
+end
+
+rule "Transaction Count Between"
+when
+    Condition( field == "Transaction Count", operator == "Between", value1 : value1, value2 : value2 )
+then
+    insertLogical( new SqlQuery("transaction_count BETWEEN " + value1 + " AND " + value2) );
+end
