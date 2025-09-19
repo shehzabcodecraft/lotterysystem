@@ -25,7 +25,7 @@ public class ClickHouseRepository {
     }
 
     public int insertRule(String ruleName, String field) {
-        String sql = "INSERT INTO customers (ruleName, field, created_at) VALUES (?, ?, now())";
+        String sql = "INSERT INTO ticket_engine (ruleName, field) VALUES (?, ?)";
         return jdbcTemplate.update(sql, ruleName, field);
     }
 }
