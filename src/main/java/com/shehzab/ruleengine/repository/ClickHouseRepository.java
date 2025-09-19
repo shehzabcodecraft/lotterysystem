@@ -23,4 +23,9 @@ public class ClickHouseRepository {
         Integer result = jdbcTemplate.queryForObject("SELECT 1", Integer.class);
         return result != null && result == 1;
     }
+
+    public int insertRule(String ruleName, String field) {
+        String sql = "INSERT INTO customers (ruleName, field, created_at) VALUES (?, ?, now())";
+        return jdbcTemplate.update(sql, ruleName, field);
+    }
 }
