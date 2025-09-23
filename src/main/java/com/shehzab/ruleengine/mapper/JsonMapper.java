@@ -2,7 +2,6 @@ package com.shehzab.ruleengine.mapper;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.shehzab.ruleengine.models.RuleRequestPojo;
 import org.springframework.stereotype.Service;
 
 @Service
