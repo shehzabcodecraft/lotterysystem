@@ -1,8 +1,6 @@
 package com.shehzab.ruleengine.service;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.shehzab.ruleengine.mapper.JsonMapper;
-import com.shehzab.ruleengine.models.RuleRequestPojo;
 import com.shehzab.ruleengine.repository.ClickHouseRepository;
 import org.springframework.stereotype.Service;
 
@@ -28,8 +26,12 @@ public class ClickHouseService {
         return clickHouseRepository.ping();
     }
 
-    public int insertRule(String rule) throws JsonProcessingException {
-        var obj = jsonMapper.fromJson(rule, RuleRequestPojo.class);
-        return clickHouseRepository.insertRule(obj.ruleName, obj.field);
-    }
+
+
+
+//    private String buildWhereClause(List<LotteryConfigRequest.Condition> conditions) {
+//        return conditions.stream()
+//                .map(c -> c.getField() + " " + c.getOperator() + " '" + c.getValue() + "'")
+//                .collect(Collectors.joining(" AND "));
+//    }
 }
